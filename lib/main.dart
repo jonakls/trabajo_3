@@ -3,7 +3,7 @@ import 'package:trabajo_3/screen/screen_home.dart';
 import 'package:trabajo_3/screen/screen_login.dart';
 import 'package:trabajo_3/screen/screen_splash.dart';
 
-import '../core/routes.dart';
+import 'package:trabajo_3/core/routes.dart';
 
 void main() {
   runApp(const MyApp());

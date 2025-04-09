@@ -17,3 +17,11 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/icons/
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/app_logo.png"
+  adaptative_icon_background: "#FFFFFF"
+  adaptative_icon_foreground: "assets/icons/app_logo.png"  

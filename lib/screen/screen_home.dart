@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import '../core/color.dart';
-
-import '../core/routes.dart';
-import '../core/string.dart';
+import 'package:trabajo_3/core/color.dart';
+import 'package:trabajo_3/core/routes.dart';
+import 'package:trabajo_3/core/string.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,7 +9,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: AppColor.gray,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -29,7 +28,7 @@ class HomeScreen extends StatelessWidget {
           Text(
             AppString.nameApp,
             style: TextStyle(
-              color: AppColor.green,
+              color: AppColor.white,
               fontSize: 40,
               fontWeight: FontWeight.bold,
             ),
@@ -43,7 +42,7 @@ class HomeScreen extends StatelessWidget {
             child: Text(
               AppString.descriptionApp,
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.black87, fontSize: 24),
+              style: TextStyle(color: AppColor.white, fontSize: 20),
             ),
           ),
 
@@ -55,16 +54,16 @@ class HomeScreen extends StatelessWidget {
               Navigator.of(context).pushReplacementNamed(Routes.loginPath);
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: AppColor.white,
+              backgroundColor: AppColor.blue,
               padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30),
-                side: BorderSide(color: AppColor.blue, width: 2),
+                side: BorderSide(color: AppColor.white, width: 2),
               ),
             ),
             child: const Text(
-              'COMIENZA',
-              style: TextStyle(color: Colors.white, fontSize: 24),
+              AppString.buttonStartApp,
+              style: TextStyle(color: AppColor.white, fontSize: 24),
             ),
           ),
 
@@ -76,9 +75,9 @@ class HomeScreen extends StatelessWidget {
               // TODO: Implementar lógica de registro
             },
             child: Text(
-              'Regístrate',
+              AppString.registerTextApp,
               style: TextStyle(
-                color: AppColor.blue,
+                color: AppColor.green,
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),

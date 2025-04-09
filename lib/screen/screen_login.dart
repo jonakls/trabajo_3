@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../core/color.dart';
-import '../core/string.dart';
+import 'package:trabajo_3/core/color.dart';
+import 'package:trabajo_3/core/string.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -9,7 +9,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColor.gray,
       body: Padding(
         padding: const EdgeInsets.all(30.0),
         child: Column(
@@ -33,27 +33,22 @@ class LoginScreen extends StatelessWidget {
 
             const SizedBox(height: 30),
             const Text(
-              'La aventura está por iniciar,\npor favor inicia sesión',
+              AppString.registerDescription,
               textAlign: TextAlign.center,
-              style: TextStyle(color: Color(0xFF589F36), fontSize: 16),
+              style: TextStyle(color: AppColor.white, fontSize: 16),
             ),
             const SizedBox(height: 30),
             TextField(
               decoration: InputDecoration(
                 hintText: 'Tu Nombre',
-                prefixIcon: const Icon(Icons.person, color: Color(0xFF589F36)),
+                prefixIcon: const Icon(Icons.person, color: AppColor.blue),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30),
-                  borderSide: BorderSide(
-                    color: const Color(0xFF589F36).withOpacity(0.5),
-                  ),
+                  borderSide: BorderSide(color: AppColor.blue),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30),
-                  borderSide: const BorderSide(
-                    color: Color(0xFF589F36),
-                    width: 2,
-                  ),
+                  borderSide: const BorderSide(color: AppColor.blue, width: 2),
                 ),
               ),
             ),
@@ -62,19 +57,14 @@ class LoginScreen extends StatelessWidget {
               obscureText: true,
               decoration: InputDecoration(
                 hintText: 'Contraseña',
-                prefixIcon: const Icon(Icons.lock, color: Color(0xFF589F36)),
+                prefixIcon: const Icon(Icons.lock, color: AppColor.blue),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30),
-                  borderSide: BorderSide(
-                    color: const Color(0xFF589F36).withOpacity(0.5),
-                  ),
+                  borderSide: BorderSide(color: AppColor.blue),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30),
-                  borderSide: const BorderSide(
-                    color: Color(0xFF589F36),
-                    width: 2,
-                  ),
+                  borderSide: const BorderSide(color: AppColor.blue, width: 2),
                 ),
               ),
             ),
@@ -84,7 +74,7 @@ class LoginScreen extends StatelessWidget {
                 // TODO: Implement login logic
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: AppColor.white,
+                backgroundColor: AppColor.blue,
                 padding: const EdgeInsets.symmetric(
                   horizontal: 50,
                   vertical: 15,
@@ -95,8 +85,8 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               child: const Text(
-                AppString.loginSubtitleApp,
-                style: TextStyle(color: Colors.white, fontSize: 24),
+                AppString.loginButtonText,
+                style: TextStyle(color: AppColor.white, fontSize: 24),
               ),
             ),
             const SizedBox(height: 20),
@@ -105,8 +95,8 @@ class LoginScreen extends StatelessWidget {
                 // TODO: Implement password recovery
               },
               child: const Text(
-                'Recupera Tu Contraseña',
-                style: TextStyle(color: Color(0xFFEF984E), fontSize: 16),
+                AppString.recoverPassword,
+                style: TextStyle(color: AppColor.green, fontSize: 16),
               ),
             ),
             const SizedBox(height: 20),
@@ -119,7 +109,7 @@ class LoginScreen extends StatelessWidget {
                 width: 25,
                 height: 25,
               ),
-              label: const Text('Ingresa con Google'),
+              label: const Text(AppString.googleSignIn),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
                 foregroundColor: Colors.black,
@@ -132,13 +122,13 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(height: 20),
             RichText(
               text: TextSpan(
-                text: 'No tienes cuenta? ',
-                style: const TextStyle(color: Colors.black),
+                text: AppString.accountQuestion,
+                style: const TextStyle(color: AppColor.white),
                 children: [
                   TextSpan(
-                    text: 'Registrate',
+                    text: AppString.registerTextApp,
                     style: const TextStyle(
-                      color: Color(0xFF589F36),
+                      color: AppColor.green,
                       fontWeight: FontWeight.bold,
                     ),
                     // TODO: Add onTap for registration
@@ -146,6 +136,7 @@ class LoginScreen extends StatelessWidget {
                 ],
               ),
             ),
+            const Spacer(),
           ],
         ),
       ),
