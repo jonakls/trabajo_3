@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 5), () {
       Navigator.of(context).pushReplacementNamed(Routes.homePath);
     });
   }
@@ -42,10 +42,11 @@ class _SplashScreenState extends State<SplashScreen> {
           Align(
             alignment: Alignment.centerRight,
             child: Text(
-              AppString.nameApp,
+              AppString.authorName,
               style: TextStyle(color: AppColor.white, fontSize: 20),
             ),
           ),
+          const SizedBox(height: 30),
         ],
       ),
     );

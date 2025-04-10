@@ -15,39 +15,50 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/icons/app_logo.png', // Reemplaza con la ruta correcta de tu logo
-              width: 200,
-              height: 200,
-              fit: BoxFit.contain,
+            const SizedBox(height: 20),
+            Row(
+              children: [
+                Image.asset(
+                  'assets/icons/app_logo.png',
+                  width: 100,
+                  height: 100,
+                  fit: BoxFit.contain,
+                ),
+                const SizedBox(width: 30),
+                Text(
+                  AppString.nameApp,
+                  style: TextStyle(
+                    color: AppColor.white,
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
             ),
-
-            Text(
-              AppString.nameApp,
-              style: TextStyle(
-                color: AppColor.white,
-                fontSize: 40,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-
             const SizedBox(height: 30),
             const Text(
               AppString.registerDescription,
               textAlign: TextAlign.center,
-              style: TextStyle(color: AppColor.white, fontSize: 16),
+              style: TextStyle(color: AppColor.white, fontSize: 18),
             ),
             const SizedBox(height: 30),
             TextField(
               decoration: InputDecoration(
-                hintText: 'Tu Nombre',
-                prefixIcon: const Icon(Icons.person, color: AppColor.blue),
+                icon: Image.asset(
+                  'assets/icons/user_icon.png',
+                  width: 50,
+                  height: 50,
+                ),
+                hintText: 'Usuario',
+                hintStyle: TextStyle(color: AppColor.blue, fontSize: 18),
+                filled: true,
+                fillColor: AppColor.white,
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(10),
                   borderSide: BorderSide(color: AppColor.blue),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(10),
                   borderSide: const BorderSide(color: AppColor.blue, width: 2),
                 ),
               ),
@@ -56,14 +67,21 @@ class LoginScreen extends StatelessWidget {
             TextField(
               obscureText: true,
               decoration: InputDecoration(
-                hintText: 'Contraseña',
-                prefixIcon: const Icon(Icons.lock, color: AppColor.blue),
+                icon: Image.asset(
+                  'assets/icons/key_icon.png',
+                  width: 50,
+                  height: 50,
+                ),
+                hintText: 'Clave',
+                hintStyle: TextStyle(color: AppColor.blue, fontSize: 18),
+                filled: true,
+                fillColor: AppColor.white,
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(10),
                   borderSide: BorderSide(color: AppColor.blue),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(10),
                   borderSide: const BorderSide(color: AppColor.blue, width: 2),
                 ),
               ),
@@ -76,12 +94,12 @@ class LoginScreen extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColor.blue,
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 50,
+                  horizontal: 100,
                   vertical: 15,
                 ),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
-                  side: BorderSide(color: AppColor.blue, width: 2),
+                  side: BorderSide(color: AppColor.white, width: 2),
                 ),
               ),
               child: const Text(
@@ -105,7 +123,7 @@ class LoginScreen extends StatelessWidget {
                 // TODO: Implement Google Sign-In
               },
               icon: Image.asset(
-                'assets/icons/google.png',
+                'assets/icons/google_icon.png',
                 width: 25,
                 height: 25,
               ),

@@ -10,82 +10,88 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.gray,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Spacer(),
-          // Logo
-          Image.asset(
-            'assets/icons/app_logo.png', // Reemplaza con la ruta correcta de tu logo
-            width: 200,
-            height: 200,
-            fit: BoxFit.contain,
-          ),
-
-          const SizedBox(height: 20),
-
-          // Nombre de la App
-          Text(
-            AppString.nameApp,
-            style: TextStyle(
-              color: AppColor.white,
-              fontSize: 40,
-              fontWeight: FontWeight.bold,
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // Logo
+            const Spacer(),
+            Image.asset(
+              'assets/icons/app_logo.png', // Reemplaza con la ruta correcta de tu logo
+              width: 200,
+              height: 200,
+              fit: BoxFit.contain,
             ),
-          ),
 
-          const SizedBox(height: 40),
+            const SizedBox(height: 30),
 
-          // Descripción
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 40),
-            child: Text(
-              AppString.descriptionApp,
-              textAlign: TextAlign.center,
-              style: TextStyle(color: AppColor.white, fontSize: 20),
-            ),
-          ),
-
-          const SizedBox(height: 30),
-
-          // Botón "Comienza"
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).pushReplacementNamed(Routes.loginPath);
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColor.blue,
-              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30),
-                side: BorderSide(color: AppColor.white, width: 2),
-              ),
-            ),
-            child: const Text(
-              AppString.buttonStartApp,
-              style: TextStyle(color: AppColor.white, fontSize: 24),
-            ),
-          ),
-
-          const SizedBox(height: 30),
-
-          // Botón "Regístrate"
-          TextButton(
-            onPressed: () {
-              // TODO: Implementar lógica de registro
-            },
-            child: Text(
-              AppString.registerTextApp,
+            // Nombre de la App
+            Text(
+              AppString.nameApp,
               style: TextStyle(
-                color: AppColor.green,
-                fontSize: 20,
+                color: AppColor.white,
+                fontSize: 40,
                 fontWeight: FontWeight.bold,
               ),
             ),
-          ),
 
-          const Spacer(), // Espaciado inferior
-        ],
+            const SizedBox(height: 80),
+
+            // Descripción
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 40),
+              child: Text(
+                AppString.descriptionApp,
+                textAlign: TextAlign.center,
+                style: TextStyle(color: AppColor.white, fontSize: 20),
+              ),
+            ),
+
+            const SizedBox(height: 80),
+
+            // Botón "Comienza"
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushReplacementNamed(Routes.loginPath);
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppColor.blue,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 50,
+                  vertical: 15,
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  side: BorderSide(color: AppColor.white, width: 2),
+                ),
+              ),
+              child: const Text(
+                AppString.buttonStartApp,
+                style: TextStyle(color: AppColor.white, fontSize: 24),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            // Botón "Regístrate"
+            TextButton(
+              onPressed: () {
+                // TODO: Implementar lógica de registro
+              },
+              child: Text(
+                AppString.registerTextApp,
+                style: TextStyle(
+                  color: AppColor.green,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const Spacer(),
+          ],
+        ),
       ),
     );
   }

@@ -1,7 +1,8 @@
 class AppString {
   static const String nameApp = "NombreApp";
+  static const String authorName = "Jonathan Narvaez P.";
   static const String descriptionApp =
-      "Inicia una nueva aventura con\nNombreDeLaApp y descubra una\nnueva foprma de ver el mundo.";
+      "Inicia una nueva aventura con\nNombreDeLaApp y descubra una\nnueva forma de ver el mundo.";
   static const String buttonStartApp = "Comienza";
   static const String registerTextApp = "Registrate";
   static const String loginButtonText = "Ingresar";
